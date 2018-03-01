@@ -17,7 +17,7 @@ class realmd::config {
     content => template('realmd/realmd.conf.erb'),
   }
 
-  if $_realmd_manage_mkhomedir && $::osfamily == 'Debian' {
+  if $_realmd_manage_mkhomedir and $::osfamily == 'Debian' {
     file { '/usr/share/pam-configs/realmd_mkhomedir':
       ensure  => file,
       owner   => 'root',
