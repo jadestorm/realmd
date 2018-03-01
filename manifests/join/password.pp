@@ -13,11 +13,11 @@ class realmd::join::password {
 
   if $::realmd::computer_name != undef {
     $_computer_name = $::realmd::computer_name
+    $_computer_name_arg = ["--computer-name=${_computer_name}"]
   } else {
     $_computer_name = $::hostname[0,15]
+    $_computer_name_arg = []
   }
-
-  $_computer_name_arg = ["--computer-name=${_computer_name}"]
 
   if $_ou != undef {
     $_realm_args = [$_domain, '--unattended', "--computer-ou='OU=${_ou}'", "--user=${_user}"]

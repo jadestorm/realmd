@@ -43,6 +43,7 @@ class realmd (
   Hash $required_packages,
   Variant[Array, Undef] $extra_join_options,
   Variant[String[1, 15], Undef] $computer_name,
+  Boolean $manage_mkhomedir,
 ) {
 
   if $krb_ticket_join == false {

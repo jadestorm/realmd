@@ -28,6 +28,7 @@ realmd::manage_krb_client_package: true
 realmd::krb_client_package_ensure: present
 realmd::extra_join_options: ~
 realmd::computer_name: ~
+realmd::manage_mkhomedir: true
 realmd::krb_config:
   logging:
     default: FILE:/var/log/krb5libs.log
